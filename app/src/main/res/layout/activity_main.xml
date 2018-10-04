@@ -6,13 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="17dp"
-        android:text="Signed in, you are in main activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/slidingUpPanelLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:umanoFlingVelocity="5"
+        app:umanoPanelHeight="188dp"
+        app:umanoClipPanel="true"
+        app:umanoOverlay="true"
+        app:umanoDragView="@color/colorPrimary"
+        app:umanoInitialState="collapsed"
+        app:umanoScrollableView="@layout/activity_main_secondary"
+        app:umanoShadowHeight="61dp">
+
+        <include
+            layout="@layout/activity_main_primary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <include
+            layout="@layout/activity_main_secondary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
 </android.support.constraint.ConstraintLayout>
